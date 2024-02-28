@@ -14,7 +14,7 @@ def obter_dica(pergunta):
     return pergunta["dica"]
 
 def jogar():
-    dinheiro = 0
+    premio = 0
     dicas_restantes = 3  # Número máximo de dicas permitidas por partida
 
     perguntas_disponiveis = perguntas[:]
@@ -35,8 +35,8 @@ def jogar():
             else:
                 if verificar_resposta(pergunta, resposta):
                     print("Resposta correta!\n")
-                    dinheiro += 1000
-                    print(f"Você ganhou R$ {dinheiro}!\n")  
+                    premio += 1000
+                    print(f"Você ganhou R$ {premio}!\n")  
                     continuar = input("Deseja continuar para a próxima pergunta? (s/n): ")
                     if continuar.lower() != "s":
                         return
@@ -44,7 +44,7 @@ def jogar():
                 else:
                     print("Resposta incorreta! Tente novamente.")
 
-    print(f"Sua pontuação final é: R$ {dinheiro}")
+    print(f"Parabens! Você ganhou R$ {premio}")
 
 if __name__ == "__main__":
     print("Bem-vindo ao Quem Quer Ser um Milionário!")
